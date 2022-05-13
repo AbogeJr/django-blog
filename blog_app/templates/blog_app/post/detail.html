@@ -1,5 +1,6 @@
 {% extends "blog_app/base.html" %}
 {% load blog_tags %}
+{% load bootstrap5 %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
     <h1>{{ post.title }}</h1>
@@ -32,12 +33,14 @@
 
     {% if new_comment %}
         <h2>Your comment has been added.</h2>
-    {% else %}
-        <h2>Add a new comment</h2>
-        <form method="post">
-        {% csrf_token %}    
-        {{ comment_form.as_p }}
-        <p><input type="submit" value="Add comment"></p>
-        </form>
+        {% else %}
+            <h2>Add a new comment</h2>
+            <form method="post" class="form">
+                {% csrf_token %}    
+                {% bootstrap_form comment_form %}
+                {% buttons %}
+                    <p><input type="submit" class="btn btn-primary" value="Add comment"></p>
+                {% endbuttons %}
+            </form>
     {% endif %}
 {% endblock %}

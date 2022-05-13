@@ -31,6 +31,9 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    #Third Party
+    'bootstrap5',
+    #Defaults
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +46,7 @@ INSTALLED_APPS = [
     #My Apps
     'blog_app.apps.BlogAppConfig',
     'taggit',
-
+    
 ]
 
 MIDDLEWARE = [
