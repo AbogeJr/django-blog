@@ -9,11 +9,11 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 
 # Create your views here.
-class PostListView(ListView):       #Class based views
-    queryset = Post.published.all()
-    context_object_name = 'posts'
-    paginate_by = 3
-    template_name = 'blog_app/post/list.html'
+# class PostListView(ListView):       #Class based views
+#     queryset = Post.published.all()
+#     context_object_name = 'posts'
+#     paginate_by = 3
+#     template_name = 'blog_app/post/list.html'
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
